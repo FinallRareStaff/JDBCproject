@@ -14,7 +14,14 @@ public class Main {
     public static void main(String[] args) {
         // реализуйте алгоритм здесь
         UserService userService = new UserServiceImpl();
+        // Создание таблицы User(ов)
         userService.createUsersTable();
+        // Добавление 4 User(ов) в таблицу с данными на свой выбор. После каждого добавления должен быть вывод в консоль ( User с именем – name добавлен в базу данных )
+        userService.saveUser("Mike", "Gordon", (byte) 56);
+        userService.saveUser("Trey", "Parker", (byte) 52);
+        userService.saveUser("Matt", "Stone", (byte) 50);
+        userService.saveUser("Whoopi", "Goldberg", (byte) 66);
+        // Закрытие соединения
         Util.closeConnectDB();
     }
 }
