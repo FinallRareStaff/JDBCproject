@@ -15,6 +15,7 @@ public class Util {
             Driver driver = new com.mysql.cj.jdbc.Driver();
             DriverManager.registerDriver(driver);
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            // Для того чтобы получить доступ к управлению транзакциями
             connection.setAutoCommit(false);
             System.out.println("Connection success");
         } catch (SQLException | ClassNotFoundException e) {
