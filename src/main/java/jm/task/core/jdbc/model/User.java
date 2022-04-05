@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.HashMap;
+import java.util.Objects;
 
 @Table
 public class User {
@@ -71,11 +72,17 @@ public class User {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        User user = (User) obj;
+        return Objects.equals(id, user.id) &&
+                Objects.equals(name, user.name) &&
+                Objects.equals(lastName, user.lastName) &&
+                Objects.equals(age, user.age);
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(name, lastName, age);
     }
 }
