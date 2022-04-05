@@ -23,6 +23,8 @@ public class Main {
         userService.saveUser("Whoopi", "Goldberg", (byte) 66);
         // Получение всех User из базы и вывод в консоль ( должен быть переопределен toString в классе User)
         userService.getAllUsers();
+        // Очистка таблицы User(ов)
+        userService.cleanUsersTable();
         // Закрытие соединения
         Util.closeConnectDB();
     }
