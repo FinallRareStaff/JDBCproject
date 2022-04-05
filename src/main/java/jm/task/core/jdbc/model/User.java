@@ -3,6 +3,7 @@ package jm.task.core.jdbc.model;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.HashMap;
 
 @Table
 public class User {
@@ -66,5 +67,15 @@ public class User {
                 + "\nИмя пользователя: " + name
                 + "\nФамилия пользователя: " + lastName
                 + "\nВозраст пользователя: " + age;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }
