@@ -21,6 +21,8 @@ public class Main {
         userService.saveUser("Trey", "Parker", (byte) 52);
         userService.saveUser("Matt", "Stone", (byte) 50);
         userService.saveUser("Whoopi", "Goldberg", (byte) 66);
+        // Получение всех User из базы и вывод в консоль ( должен быть переопределен toString в классе User)
+        userService.getAllUsers();
         // Закрытие соединения
         Util.closeConnectDB();
     }
